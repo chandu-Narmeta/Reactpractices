@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 function Header(){
+    var [count,setCount] = useState(0)
+
+    function inc(){
+        setCount(count+1)
+    }
+    function dec(){
+        setCount(count-1)
+    }
     return (
-        <div>
-            <h1>Hello React</h1>
+        <div className="p-2 border border-success">
+            <h1>counter:{count}</h1>
+            <button onClick={()=>{inc()}}>increment</button>
+            <button onClick={()=>{dec()}}>decrement</button>
         </div>
     )
 }

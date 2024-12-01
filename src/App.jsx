@@ -1,10 +1,11 @@
 import Header from "./component/Header";
+import Todolist from "./component/todolist/Todolist";
 
 function App() {
   return (
      <div>
-     <h1>?Hai?</h1>
      <Header/>
+     <Todolist/>
      </div>
   )
 }
