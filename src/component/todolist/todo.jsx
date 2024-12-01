@@ -7,6 +7,7 @@ function Todo(props){
 
     return <div>
         <ul>
+            <h1>TODOLISt</h1>
         <li>{props.t}</li><button onClick={()=>{props.deletetodo(props.i)}}>Delete</button>
        </ul>
           </div>
