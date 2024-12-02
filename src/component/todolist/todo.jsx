@@ -3,8 +3,7 @@ import { useEffect } from "react";
 
 
 function Todo(props){
-    useEffect(()=>{},[])
-
+    useEffect(()=>{console.log("todo re-rendering")},[])
     return <div>
         <ul>
         <li>{props.t}</li><button onClick={()=>{props.deletetodo(props.i)}}>Delete</button>
@@ -14,4 +13,4 @@ function Todo(props){
    
 }
 
-export default Todo
+export default React.memo(Todo)

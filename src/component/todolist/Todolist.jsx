@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState ,useCallback, useRef} from "react";
 import Todo from "./todo";
 
 function Todolist(){
    var [todo,setTodo]= useState(["pay rent","pay bill"])
-   useEffect(()=>{console.log("on mounting time")},[])
-  
-
    var [nwtd,setNwtd]=useState()
+  var nref =useRef()
+     useEffect(()=>{console.log("re-rendering")
+        nref.current.focus()
+     },[todo])
 
    function newtodo(e){
        setNwtd(e.target.value)
@@ -14,16 +15,19 @@ function Todolist(){
    function updatetodo(){
      setTodo([...todo,nwtd])
    }
-   function deletetodo(ind){
-      var temp=[...todo]
-      temp.splice(ind,1)
-      setTodo([...temp])
-   }
+  
+  var deletetodo =useCallback(
+    function (ind){
+        var temp=[...todo]
+        temp.splice(ind,1)
+        setTodo([...temp])
+     },[todo]
+  )
 
 
 return(
     <div>
-        <input type="text" onKeyUp={(e)=>{newtodo(e)}} />
+        <input type="text" onKeyUp={(e)=>{newtodo(e)}}  ref={nref} />
         <button onClick={()=>{updatetodo()}}>addTodo</button>
         <div>
             {

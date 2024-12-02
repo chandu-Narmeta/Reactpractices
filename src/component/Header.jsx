@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 function Header(){
     var [count,setCount] = useState(0)
 
+    console.log("counter re-rendering")
+
     function inc(){
         setCount(count+1)
     }
