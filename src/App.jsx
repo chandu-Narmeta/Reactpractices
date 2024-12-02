@@ -1,11 +1,9 @@
-import Header from "./component/Header";
-import Todolist from "./component/todolist/Todolist";
+import Parent from "./component/Parent";
 
 function App() {
   return (
      <div>
-     <Header/>
-     <Todolist/>
+     <Parent/>
      </div>
   )
 }
