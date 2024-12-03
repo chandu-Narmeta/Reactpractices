@@ -1,9 +1,13 @@
-import Parent from "./component/Parent";
+import { Outlet } from "react-router-dom";
+import Features from "./Component/Features";
+import Navbar from "./Component/Navbar";
+import Priceses from "./Component/Priceses";
 
 function App() {
   return (
      <div>
-     <Parent/>
+    <Navbar></Navbar>
+     <Outlet></Outlet>
      </div>
   )
 }
